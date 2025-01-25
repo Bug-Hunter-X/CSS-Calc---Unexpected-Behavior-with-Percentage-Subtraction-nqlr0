@@ -1,0 +1,11 @@
+The solution is to calculate the percentage value separately and then subtract it from the length value. For example, to subtract 10% from 50px, you would calculate 10% of 50px (which is 5px) and then subtract that value. Let's assume you want a width that is 50px minus 10% of 50px:
+
+```css
+/* Incorrect - might not render correctly across all browsers */
+width: calc(50px - 10%);
+
+/* Correct */
+width: calc(50px - 5px); /* or use variables for clarity and maintainability*/
+width: calc(50px - 0.1 * 50px);
+```
+If you want the 10% to be relative to the containing element you have to use the percentage on the parent width and subtract from a fixed pixel value or percentage of parent. It depends on your layout.
